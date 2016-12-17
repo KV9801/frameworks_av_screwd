@@ -1903,7 +1903,7 @@ sp<AudioFlinger::PlaybackThread> AudioFlinger::openOutput_l(audio_module_handle_
             thread = new DirectOutputThread(this, outputStream, *output, devices, mSystemReady);
             ALOGV("openOutput_l() created direct output: ID %d thread %p ", *output, thread);
             //Check if this is DirectPCM, if so
-            if (flags & AUDIO_OUTPUT_FLAG_DIRECT_PCM) {
+            if (flags & AUDIO_OUTPUT_FLAG_DIRECT) {
                 thread->mIsDirectPcm = true;
             }
         } else {
